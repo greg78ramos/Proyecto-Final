@@ -5,7 +5,7 @@
 int main() 
 {
     char *tituloscanciones[10] = {"Hielo","La Célula Que Explota","Trátame Suavemente","En La Ciudad De La Furia","Azul","Viento","Lamento Boliviano","La Mentira","Persiana Americana","EoO"};
-    int votosdeparticipantes[100][3], v1, v2, v3, i;
+    int votosdeparticipantes[100][3] , v1 , v2 , v3 , i ;
     int totaldeparticipantes = 0;
     
     printf("CONCURSO\n");
@@ -64,7 +64,22 @@ int main()
 
         totaldeparticipantes++;
     }
-
+    
+    int numvot[10]={0,0,0,0,0,0,0,0,0,0};
+        
+    for( i=0 ; i<totaldeparticipantes ; i++ )
+    {
+        int au=votosdeparticipantes[i][0] - 1,ad=votosdeparticipantes[i][1] - 1,at=votosdeparticipantes[i][2] - 1 ;
+        numvot[au]++;
+        numvot[ad]++;
+        numvot[at]++;
+    }
+    printf("Votos totales:\n");
+        
+    for( i=0 ; i<10 ; i++ )
+    {
+        printf("%s = %d votos totales\n", tituloscanciones[i], numvot[i]);
+    }
     
     return 0;
 }
