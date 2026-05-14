@@ -81,5 +81,28 @@ int main()
         printf("%s = %d votos totales\n", tituloscanciones[i], numvot[i]);
     }
     
+    int id1 = -1 , max1 = -1 , id2 = -1 , max2 = -1 ;
+    
+    for(i=0;i<10;i++)
+    {
+        
+        if(numvot[i]>max1)
+        {
+            max2=max1;
+            id2=id1;
+            
+            max1=numvot[i];
+            id1=i;
+        }
+        else if(numvot[i]>max2)
+            {
+                max2=numvot[i];
+                id2=i;
+            }
+    }
+    
+    printf("La canción más votada es %s con %d votos\n", tituloscanciones[id1], max1);
+    printf("La segunda canción más votada es: %s con %d votos\n", tituloscanciones[id2], max2);
+    
     return 0;
 }
