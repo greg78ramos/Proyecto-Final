@@ -107,7 +107,7 @@ int main()
     int conteo[100] = {0} ;
     int maxpun = -1, champiñon = -1;
     
-    printf("PUNTAJES   PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES");
+    printf("PUNTAJES   PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES\n");
     
     for(i=0;i<totaldeparticipantes;i++)
     {
@@ -143,6 +143,8 @@ int main()
         }
         
     }
+    
+    printf("\nEL GANADOR UNICO DEL PREMIO ES: Participante %d con %d puntos\n", champiñon, maxpun);
     
     
     return 0;
