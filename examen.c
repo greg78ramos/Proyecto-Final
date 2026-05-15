@@ -104,5 +104,46 @@ int main()
     printf("La canción más votada es %s con %d votos\n", tituloscanciones[id1], max1);
     printf("La segunda canción más votada es: %s con %d votos\n", tituloscanciones[id2], max2);
     
+    int conteo[100] = {0} ;
+    int maxpun = -1, champiñon = -1;
+    
+    printf("PUNTAJES   PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES  PUNTAJES");
+    
+    for(i=0;i<totaldeparticipantes;i++)
+    {
+        int aprim = 0, asegun = 0, j;
+        
+        for(j = 0; j < 3; j++) 
+        {
+            if(votosdeparticipantes[i][j] == id1 + 1) aprim = 1;
+            if(votosdeparticipantes[i][j] == id2 + 1) asegun = 1;
+        }
+        
+        if(aprim) 
+        {
+            conteo[i] += 30;
+        }
+        
+        if(asegun)
+        {
+            conteo[i] += 20;
+        }
+        
+        if(aprim && asegun) 
+        {
+            conteo[i] += 10;
+        }
+        
+        printf("Participante %d: %d puntos\n", i, conteo[i]);
+        
+        if(conteo[i] > maxpun) 
+        {
+            maxpun = conteo[i];
+            champiñon = i;
+        }
+        
+    }
+    
+    
     return 0;
 }
